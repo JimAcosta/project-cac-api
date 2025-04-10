@@ -1,5 +1,5 @@
 from flask import Blueprint,jsonify,request
-from models.AlumnoModel import AlumnoModel
+from src.models.AlumnoModel import AlumnoModel
 from src.models.entities.Alumno import Alumno
 
 
