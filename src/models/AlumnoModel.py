@@ -1,4 +1,4 @@
-from database.db import get_db,close_db
+from src.database.db import get_db,close_db
 from .entities.Alumno import Alumno
 from flask import jsonify
 
