@@ -1,5 +1,5 @@
 from flask import Flask
-from config import config
+from src.config import config
 from routes import Alumno
 from flask_cors import CORS
 
