@@ -1,6 +1,6 @@
 from flask import Flask
 from src.config import config
-from routes import Alumno
+from src.routes import Alumno
 from flask_cors import CORS
 
 
