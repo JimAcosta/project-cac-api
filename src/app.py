@@ -2,6 +2,7 @@ from flask import Flask
 from src.config import config
 from src.routes import Alumno
 from flask_cors import CORS
+from src.routes.test_connection import test_db
 
 
 
@@ -18,5 +19,6 @@ if __name__== '__main__':
 
     app.config.from_object(config['development'])
     app.register_blueprint(Alumno.main, url_prefix = '/')
+    app.register_blueprint(test_db)
     app.register_error_handler(404,page_not_found)
     app.run()
