@@ -14,6 +14,10 @@ def get_alumnos():
     
     except Exception as ex:
         return jsonify({'mensaje pa': str(ex)})
+
+@main.route('/test')
+def test():
+    return 'API online mostro'
     
 @main.route('/get_alumno/<email>', methods=['GET'])
 def get_alumno(email):
