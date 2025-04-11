@@ -8,6 +8,7 @@ app = Flask(__name__)
 CORS(app)
 
 def page_not_found(error):
+    print("Entró al error 404")  # DEBUG
     return '<h1>No funciona mostro</h1>',404
 
 if __name__== '__main__':
