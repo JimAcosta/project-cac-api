@@ -15,7 +15,11 @@ DATABASE_CONFIG = {
 
 def get_db():
     if 'db' not in g:
-        g.db = psycopg2.connect(**DATABASE_CONFIG)
+        try:
+            g.db = psycopg2.connect(**DATABASE_CONFIG)
+        except Exception as e:
+            print("❌ Error al conectar a la base de datos:", e)
+            raise
     return g.db
 
 def close_db(e=None):

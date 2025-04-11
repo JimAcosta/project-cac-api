@@ -8,11 +8,12 @@ main = Blueprint('alumno_blueprint',__name__)
 @main.route('/')
 def get_alumnos():
     try:
+        print("intenta")
         alumnos = AlumnoModel.get_alumnos()
         return jsonify(alumnos)
     
     except Exception as ex:
-        return jsonify({'message': str(ex)})
+        return jsonify({'mensaje pa': str(ex)})
     
 @main.route('/get_alumno/<email>', methods=['GET'])
 def get_alumno(email):

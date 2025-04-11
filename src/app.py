@@ -4,6 +4,9 @@ from src.routes import Alumno
 from flask_cors import CORS
 
 
+
+
+
 app = Flask(__name__)
 CORS(app)
 
