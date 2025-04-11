@@ -1,5 +1,5 @@
 import os
-import mysql.connector
+import psycopg2
 from flask import g
 from dotenv import load_dotenv
 
@@ -10,12 +10,12 @@ DATABASE_CONFIG = {
     'password': os.getenv('DB_PASSWORD'),
     'host': os.getenv('DB_HOST'),
     'database': os.getenv('DB_NAME'),
-    'port': int(os.getenv('DB_PORT', 3306))  # Puerto de MySQL
+    'port': int(os.getenv('DB_PORT', 5432))  # Puerto de PostgreSQL
 }
 
 def get_db():
     if 'db' not in g:
-        g.db = mysql.connector.connect(**DATABASE_CONFIG)
+        g.db = psycopg2.connect(**DATABASE_CONFIG)
     return g.db
 
 def close_db(e=None):

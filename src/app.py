@@ -14,5 +14,5 @@ if __name__== '__main__':
 
     app.config.from_object(config['development'])
     app.register_blueprint(Alumno.main, url_prefix = '/api/alumnos')
-    app.register_error_handler(404,page_not_found)
+    app.register_error_handler(408,page_not_found)
     app.run()
