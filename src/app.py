@@ -3,8 +3,7 @@ from src.config import config
 from src.routes import Alumno
 from flask_cors import CORS
 from src.routes.test_connection import test_db
-
-
+import os
 
 
 
@@ -22,3 +21,6 @@ if __name__== '__main__':
     app.register_blueprint(test_db)
     app.register_error_handler(404,page_not_found)
     app.run()
+
+    port = int(os.environ.get("PORT", 5000))  # Usar puerto de entorno o 5000 por defecto
+    app.run(host='0.0.0.0', port=port) 
