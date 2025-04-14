@@ -7,21 +7,11 @@ main = Blueprint('alumno_blueprint',__name__)
 
 @main.route('/')
 def get_alumnos():
-    print("⚡ Entró a la ruta principal /")
     try:
         alumnos = AlumnoModel.get_alumnos()
         return jsonify(alumnos)
     except Exception as ex:
-        print("❌ Ocurrió un error: ", ex)
-        return jsonify({'mensaje pa': str(ex)})
-
-@main.route('/test')
-def test():
-    return 'API online mostro'
-
-@main.route('/ping')
-def ping():
-    return jsonify({'status': 'API funcionando en producción 🔥'})
+        return jsonify({'mesagge pa': str(ex)})
     
 @main.route('/get_alumno/<email>', methods=['GET'])
 def get_alumno(email):
