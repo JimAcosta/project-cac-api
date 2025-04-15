@@ -11,7 +11,8 @@ def get_alumnos():
         alumnos = AlumnoModel.get_alumnos()
         return jsonify(alumnos)
     except Exception as ex:
-        return jsonify({'mesagge pa': str(ex)})
+        return jsonify({'message': str(ex)})
+
     
 @main.route('/get_alumno/<email>', methods=['GET'])
 def get_alumno(email):
@@ -21,10 +22,8 @@ def get_alumno(email):
             return jsonify({'message': 'Alumno no encontrado'}), 404
         return jsonify(alumno.to_JSON())
     except Exception as ex:
-        return jsonify({'message': str(ex), 'error': "No encontró xd"}), 500
+        return jsonify({'message': str(ex), 'error': "No encontró"}), 500
     
-
-
 @main.route('/add',methods=['POST'])
 def add_alumno():
     try:

@@ -25,7 +25,6 @@ def get_db():
                 'database': os.getenv('DB_NAME'),
                 'port': int(os.getenv('DB_PORT', 5432))  # Puerto de PostgreSQL
             })
-            print("❌ Error al conectar a la base de datos:", e)
             raise
     return g.db
 
